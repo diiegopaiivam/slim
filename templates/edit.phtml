@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Editar Contatos</title>
+        <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <h1>Editar Contatos</h1>
+
+        <form method="POST">
+            Nome: <br>
+            <input type="text" name="Nome" value="<?php echo $info['Nome'];?>"><br>
+            Telefone: <br>
+            <input type="text" name="Telefone" value="<?php echo $info['Telefone'];?>"><br>
+            CPF: <br>
+            <input type="text" name="Cpf" value="<?php echo $info['Cpf'];?>"><br><br>
+
+            <input type="submit" value="Editar">
+        </form>
+    </body>
+</html>
