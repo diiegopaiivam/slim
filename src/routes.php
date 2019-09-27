@@ -61,5 +61,14 @@ return function (App $app) {
 
     });
 
+    // Rotas para casas
+
+    $app->get('/buscaCasa', function(Request $request, Response $response, Args $args) use ($container) {
+        $casa = new Casa($this->db);
+
+        $args['casa'] = $casa->getCasa();
+
+        return $container->get('renderer')->render($response, 'home.phtml', $args);
+    });
 
 };

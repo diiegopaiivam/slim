@@ -32,11 +32,25 @@ class Casa {
         $sql->execute();
     }
 
-    public function getContato($id){
+    public function getCidade($cidade){
         $array = array();
 
-        $sql = $this->db->prepare("SELECT * FROM casas where Id = :id");
-        $sql->bindValue(":id", $id);
+        $sql = $this->db->prepare("SELECT Cidade FROM casas where Cidade = :cidade");
+        $sql->bindValue(":cidade", $cidade);
+        $sql->execute();
+
+        if ($sql->rowCount() > 0){
+            $array = $sql->fetch();
+        }
+
+        return $array;
+    }
+
+    public function getBairro($bairro){
+        $array = array();
+
+        $sql = $this->db->prepare("SELECT Bairro FROM casas where Bairro = :bairro");
+        $sql->bindValue(":bairro", $bairro);
         $sql->execute();
 
         if ($sql->rowCount() > 0){
