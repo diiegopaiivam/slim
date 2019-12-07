@@ -1,0 +1,26 @@
+{% extends 'master.html' %}
+
+{% block master %}
+
+	<h2>Cadastro - Sistema de validação</h2>
+    
+	<hr>
+
+	<form action="/eventos/cadastro" method="post">
+		 <div class="form-group">
+			<label for="">Titulo do evento</label>
+			<input type="text" name="title" class="form-control">
+			
+		</div>
+	
+		 <div class="form-group">
+			<label for="">Descrição</label>
+			<textarea class="form-control" name="body" rows="3"></textarea>
+			
+		</div>
+
+		<button type="submit" class="btn btn-success">Cadastrar</button>
+
+	</form>
+
+{% endblock %}

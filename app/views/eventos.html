@@ -1,0 +1,28 @@
+{% extends 'master.html' %}
+
+{% block master %}
+
+<h2>{{ title }}</h2>
+
+<table class="table table-striped">
+    <tr>
+        <td>Id</td>
+        <td>Evento</td>
+        <td>Descrição</td>
+        <td>Data</td>
+
+    </tr>
+    {% for evento in eventos %}
+        <tr>
+            <td>{{ evento.eventos_id }}</td>
+            <td>{{ evento.title }}</td>
+            <td>{{ evento.body }}</td>
+            <td>{{ evento.date }}</td>
+        </tr>
+    {% endfor %}
+
+</table>
+
+<a type="button" class="btn btn-primary" href="/eventos/cadastro">Cadastrar</a>
+
+{% endblock %}
