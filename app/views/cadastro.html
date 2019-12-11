@@ -2,24 +2,24 @@
 
 {% block master %}
 
-	<h2>Cadastro - Sistema de validação</h2>
+	<h2>Cadastro de Eventos</h2>
     
 	<hr>
 
-	<form action="/eventos/cadastro" method="post">
+	<form action="/eventos/cadastro" id="cadastro" method="post">
 		 <div class="form-group">
 			<label for="">Titulo do evento</label>
 			<input type="text" name="title" class="form-control">
-			
+			{{ message('title') }}
 		</div>
 	
 		 <div class="form-group">
 			<label for="">Descrição</label>
 			<textarea class="form-control" name="body" rows="3"></textarea>
-			
+			{{ message('body') }}
 		</div>
 
-		<button type="submit" class="btn btn-success">Cadastrar</button>
+		<button id="cadastrar"  class="btn btn-success">Cadastrar</button>
 
 	</form>
 

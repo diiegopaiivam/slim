@@ -1,7 +1,7 @@
 let btn_subscribe = document.querySelector('#btn_subscribe');
 
 btn_subscribe.onclick = function(){
-    axios.get('/user/subscribe').then((response) => {
+    axios.post('/user/subscribe').then((response) => {
         console.log(response.data);
     });
 };

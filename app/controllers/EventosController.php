@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Eventos;
+use app\src\Validate;
 
 class EventosController extends Controller {
 
@@ -30,7 +31,18 @@ class EventosController extends Controller {
     }
 
     public function store(){
-        dd('store');
+        $validate = new Validate;
+
+        $validate->validate([
+            'title' => 'required',
+            'body'  => 'required',
+        ]);
+
+        if($validate->hasError()){
+            return back();
+        }
+
+        dd($data);
     }
     
 }
